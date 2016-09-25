@@ -1,0 +1,12 @@
+<% if object && object.errors.size > 0 %>
+		
+	<h2>The following errors have occured: (<%= pluralize(object.errors.size,"error") %>) </h2>
+	<ul>
+	<% object.errors.full_messages.each do |msg| %>
+
+		<li>
+			<%= msg %>
+		</li>
+	<% end %>
+	</ul>
+<% end %>

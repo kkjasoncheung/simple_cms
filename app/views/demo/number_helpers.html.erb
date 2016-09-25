@@ -1,0 +1,56 @@
+<!-- Number helpers: Rails code to help outputting numbers -->
+
+<h1>number_to_currency</h1>
+<%= number_to_currency(45.15) %>
+<h3>with options </h3>
+<%= number_to_currency(45.15, :precision=>1, :unit=>"kr", :format=>"%n %u") %>
+
+<hr>
+
+<!-- Doesn't divide by 100 -->
+<h1>number_to_percentage</h1>
+<%= number_to_percentage(34.500) %>
+<h3> with options </h3>
+<%= number_to_percentage(34.5, :precision=>2, :separator=>',') %>
+
+<hr>
+
+<!-- Used with decimal numbers to set precision AKA number_to_rounded -->
+<h1>number_with_precision</h1>
+<%= number_with_precision(32.33333) %>
+<!-- by default, has a :precision=>3 -->
+
+<h3>with options</h3>
+<%= number_with_precision(32.33333, :precision=>4) %>
+
+<hr>
+
+<!-- puts thousands separator in between numbers -->
+<h1>number_with_delimiter</h1>
+<%= number_with_delimiter(1234567) %>
+<h3> with options</h3>
+<%= number_with_delimiter(1234567, :delimiter=>' ') %>
+
+<hr>
+
+<!-- converts the number into human number words -->
+<h1>number_to_human </h1>
+<%= number_to_human(1234) %>
+<h3> with options </h3>
+<!-- precision sets the number of total numbers displayed -->
+<%= number_to_human(123456789, :precision=>6, :separator=>".") %>
+<hr>
+
+<!-- useful for working with data or files. Passes in number of bytes-->
+<h1>number_to_human_size </h1>
+<%= number_to_human_size(1234567) %>
+<h3> with options </h3>
+<%= number_to_human_size(1234567, :precision=>2) %>
+<hr>
+
+<!-- pass in number to be formatted like a phone number -->
+<h1>number_to_phone</h1>
+<%= number_to_phone(1234567890) %>
+<h3> with options </h3>
+<%= number_to_phone(1234567890, :area_code => true, :delimiter=> ' ', :country_code => 1, :extension=>'321') %>
+<hr>

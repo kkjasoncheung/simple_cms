@@ -1,0 +1,29 @@
+<h1>Demo#index</h1>
+<p>Hello from index</p>
+
+<a href="/demo/hello">Hello page 1</a>
+<br/>
+
+<%= link_to('hello page 2', {:action => 'hello'}) %>
+
+<br/>
+
+<%= link_to('hello with parameters', {:action => 'hello', :page=>5, :id => 20}) %>
+
+<h1>The pages parameters </h1>
+
+<%= params.inspect %>
+
+<hr>
+
+<%= "You are on page #{@page}, with an ID of #{@id}" %>
+<hr>
+<br>
+<% name = "Jason" %>
+<!-- using js helpers to use functions in the js manifest file public.js -->
+<%= link_to('Roar', '#', :onclick=>"jsRoar('#{j(name)}'); return true;") %>
+<!-- inside the javascript_tag is where you put literal JS in. In this case calling the defined function. -->
+<%= javascript_tag("jsRoar('#{j(name)}');")%>
+<hr>
+<br>
+<%= link_to('Add 2 numbers', '#', :onclick=>'add(2,2); return true;') %>

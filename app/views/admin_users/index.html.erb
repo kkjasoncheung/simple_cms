@@ -1,0 +1,37 @@
+<% @page_title ="Admin Users" %> 
+
+<div class="users index">
+	<h2>Admin Users</h2>
+
+	<%= link_to( "Create New User", :action=>'new', :class=>'action new') %> 
+	<br>
+	<br>
+	<%= link_to("<< Back to Main Menu", :controller=>"access", :action=>'index')%>
+	<br>
+	<br>
+	<div>
+		<%= pluralize(@admin_users.size, "Admin User") %>
+	</div>
+	
+	<br>
+
+	<table class="listing" summary="User list">	
+		<tr>
+			<th>Name</th>
+			<th>Username </th>
+			<th>Email</th>
+			<th>Actions </th>
+		</tr>
+		<% @admin_users.each do |admin_user| %>
+			<tr class="<%= cycle('even','odd') %>">	
+				<td><%= admin_user.name %></td>
+				<td><%= admin_user.username %> </td>
+				<td><%= mail_to(admin_user.email) %> </td>
+				<td>
+					<%= link_to('Edit', {:action => 'edit', :id=>admin_user.id}, :class=>' action edit') %>
+				<%= link_to('Delete', {:action=>'delete', :id=>admin_user.id}, :class=>'action delete') %></td>
+			</tr>
+		<% end %>
+	</table>
+
+</div>

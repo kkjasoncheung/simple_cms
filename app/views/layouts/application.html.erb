@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple CMS</title>
+
+    <!-- Uses the javascript_include_tag (javascript helper) to include the js file -->
+    
+    <%= javascript_include_tag('public') %>
+
+  </head>
+
+  <body>
+  	<!-- before yield -->
+    <%= yield %>
+    <!-- after yield -->
+
+  </body>
+</html>

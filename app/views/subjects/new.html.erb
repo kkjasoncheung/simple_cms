@@ -1,0 +1,17 @@
+<% @page_title = "New Subject" %>
+
+<%= render(:partial=>'shared/back')%>
+
+<div class="subjects new">
+	<h2>Create Subjects</h2>
+
+	<%= form_for(:subject, :url=>{:action=>'create'}) do |f| %>
+		
+		<%= render(:partial => "subjects/form", :locals => {:f => f}) %>
+
+		<div class="form-buttons">
+			<%= submit_tag("Create Subject")%>
+		</div>
+
+	<% end %>
+</div>

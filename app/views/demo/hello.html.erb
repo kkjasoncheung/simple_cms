@@ -1,0 +1,33 @@
+<h1>Demo#hello</h1>
+<p>Hello world!</p>
+
+<%= "This is some ruby code" %>
+
+<%= "Instance variable array #{@array}" %>
+
+<a href="/demo/hello">Index page 1</a>
+<%= link_to('Index page 2', {:action => 'index'}) %>
+
+<br />
+
+ID: <%= params[:id] %>
+ID: <%= @id %>
+
+<br> 
+
+Next Page <%= @page +1 %>
+
+<hr>
+<%= params.inspect %>
+
+<hr>
+
+<h2>Here's an example </h2>
+<%= "Outputted text no in ruby code" %>
+<%= link_to('To index', {:action => 'index', :id => 1, :page => 0}) %>
+<hr>
+
+<%= "Multiplying array by 3 gives: " %>
+<% @array.each do |item| %>
+	<%= item*3 %>
+<% end %>	

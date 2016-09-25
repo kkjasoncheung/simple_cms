@@ -1,0 +1,28 @@
+
+<%= error_messages_for(@subject) %>
+<!-- Need to provide an object 'f' to be used in the form-->
+
+<%# tiny_error_for(@subject) %>
+
+<table summary="Subject form fields">
+			<tr>
+				<th><%= f.label(:name) %></th>
+				<td><%= f.text_field(:name) %></td>
+			</tr>
+
+			<tr>
+				<th><%= f.label(:position) %></th>
+				<td><%= f.select(:position, 1..@subject_count) %></td>
+			</tr>
+
+			<tr>
+				<th><%= f.label(:visible) %></th>
+				<td><%= f.check_box(:visible) %></td>
+			</tr>
+			<tr>
+				<!-- Add the date and time selector to the form for a user -->
+				<th><%= f.label(:created_at, "Created At: ") %></th>
+				<td><%= f.date_select(:created_at,{:order => [:month, :day, :year], :discard_day=>true}) %> </td>
+			</tr>
+			
+</table>
